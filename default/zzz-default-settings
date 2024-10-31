@@ -51,19 +51,19 @@ sed -i 's/root::0:0:99999:7:::/root:$1$V4UetPzk$CYXluq4wUazHjmCDBCqXF.:0:0:99999
 sed -i 's/root:::0:99999:7:::/root:$1$V4UetPzk$CYXluq4wUazHjmCDBCqXF.:0:0:99999:7:::/g' /etc/shadow
 
 # nginx
-uci set nginx.global.uci_enable='true'
-uci del nginx._lan
-uci del nginx._redirect2ssl
-uci add nginx server
-uci rename nginx.@server[0]='_lan'
-uci set nginx._lan.server_name='_lan'
-uci add_list nginx._lan.listen='80 default_server'
-uci add_list nginx._lan.listen='[::]:80 default_server'
-#uci add_list nginx._lan.include='restrict_locally'
-uci add_list nginx._lan.include='conf.d/*.locations'
-uci set nginx._lan.access_log='off; # logd openwrt'
-uci commit nginx
-service nginx restart
+# uci set nginx.global.uci_enable='true'
+# uci del nginx._lan
+# uci del nginx._redirect2ssl
+# uci add nginx server
+# uci rename nginx.@server[0]='_lan'
+# uci set nginx._lan.server_name='_lan'
+# uci add_list nginx._lan.listen='80 default_server'
+# uci add_list nginx._lan.listen='[::]:80 default_server'
+# uci add_list nginx._lan.include='restrict_locally'
+# uci add_list nginx._lan.include='conf.d/*.locations'
+# uci set nginx._lan.access_log='off; # logd openwrt'
+# uci commit nginx
+# service nginx restart
 
 # docker mirror
 if [ -f /etc/config/dockerd ] && [ $(grep -c daocloud.io /etc/config/dockerd) -eq '0' ]; then
