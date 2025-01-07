@@ -43,6 +43,6 @@ sed -i '/option disabled/d' /etc/config/wireless
 sed -i '/set wireless.radio${devidx}.disabled/d' /lib/wifi/mac80211.sh
 
 sed -i '/DISTRIB_DESCRIPTION/d' /etc/openwrt_release
-echo "DISTRIB_DESCRIPTION='ImmortalWrt SNAPSHOT '" >> /etc/openwrt_release
+echo "DISTRIB_DESCRIPTION='ImmortalWrt 24.10-SNAPSHOT '" >> /etc/openwrt_release
 
 exit 0
