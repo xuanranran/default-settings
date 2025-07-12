@@ -104,4 +104,4 @@ msgid "Reserve IP"
 msgstr "设为静态IP"
 
 msgid "Reserve a specific IP address for this device"
-msgstr "为这台设备指定一个固定IP地址"
+msgstr "为这台设备设定一个固定的IP地址"
