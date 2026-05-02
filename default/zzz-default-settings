@@ -69,12 +69,8 @@ uci set nginx._lan.access_log='off; # logd openwrt'
 uci commit nginx
 service nginx restart
 
-# netifd
-if uci -q get network.wan6 >/dev/null; then
-    uci set network.wan6.reqaddress='force'
-    uci commit network
-fi
-
+# clean
+rm -rf /etc/profile.d/busybox-history-file.sh
 
 # disable coremark
 sed -i '/coremark/d' /etc/crontabs/root
